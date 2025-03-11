@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'attributes' => [
+        "created_at"                        => "Data",
+        "type"                              => "Tipologia",
+        "name"                              => "Titolo bando",
+        "entity"                            => "Ente",
+        "tender_url"                        => "URL bando",
+        "classification"                    => "Classificazione",
+        "deadline"                          => "Scadenza",
+        "is_analyzed"                       => "Analizzato",
+        "archive"                           => "Archiviato",
+        "included_ateco_codes"              => "Codici Ateco inclusi",
+        "excluded_ateco_codes"              => "Codici Ateco esclusi",
+        "revenue"                           => "Fatturato",
+        "registries"                        => "Registri",
+        "sectors"                           => "Settori",
+        "maximum_requested"                 => "Massimo richiedibile",
+        "matching"                          => "Matching",
+        "regions"                           => "Regioni",
+        "provinces"                         => "Province",
+        "postal_code"                       => "CAP",
+        "location_for_matching"             => "Località per matching",
+        "ceiling"                           => "Plafond",
+        "textual_ceiling"                   => "Plafond testuale",
+        "loan_percentage"                   => "Percentuale finanziamento",
+        "female_majority"                   => "Maggioranza femminile",
+        "youth_majority"                    => "Maggioranza giovanile",
+        "minimum_years_of_activity"         => "Minimo anni di attività",
+        "introduction"                      => "Introduzione",
+        "additional_notes"                  => "Note",
+        "drive_url"                         => "URL Google Drive",
+        "matching_clients_count"            => "Match",
+        "subscribed_matching_clients_count" => "Match abbonati",
+        "associated_clients_count"          => "Associati",
+        "actions"                           => "Azioni",
+    ],
+];

@@ -1,0 +1,44 @@
+{
+    "name": "tapandtie",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^4.3.0",
+        "autoprefixer": "^10.4.19",
+        "axios": "^1.7.2",
+        "laravel-vite-plugin": "^1.0.4",
+        "postcss": "^8.4.38",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "tailwindcss": "^3.4.3",
+        "vite": "^5.2.12",
+        "vite-plugin-svgr": "^4.2.0"
+    },
+    "dependencies": {
+        "@headlessui/react": "^2.0.4",
+        "@inertiajs/inertia": "^0.11.1",
+        "@inertiajs/inertia-react": "^0.8.1",
+        "@inertiajs/react": "^1.1.0",
+        "@internationalized/date": "^3.5.4",
+        "@nextui-org/react": "^2.4.1",
+        "@nextui-org/theme": "^2.2.5",
+        "@tabler/icons-react": "^3.5.0",
+        "date-fns": "^3.6.0",
+        "file-saver": "^2.0.5",
+        "framer-motion": "^11.2.10",
+        "lodash": "^4.17.21",
+        "matice": "^1.1.5",
+        "papaparse": "^5.4.1",
+        "react-file-icon": "^1.4.0",
+        "react-router-dom": "^6.24.0",
+        "react-select": "^5.8.0",
+        "react-toastify": "^10.0.5",
+        "react-use": "^17.5.0",
+        "styled-components": "^6.1.11",
+        "use-inertia-form": "^4.2.0"
+    }
+}
