@@ -39,8 +39,8 @@ h5 {
 
 :root {
     --primary-color: #000000;
-    --secondary-color: #26ACBE;
-    --font-family: 'Lexend Deca', sans-serif;
+    --secondary-color: #DEB887;
+    --font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -171,7 +171,7 @@ label.ps-radio div.ml-2{
 }
 
 .required-border > div{
-    border: 1.5px solid #26ACBE !important;
+    border: 1.5px solid #DEB887 !important;
     border-radius: 12px !important;
 }
 

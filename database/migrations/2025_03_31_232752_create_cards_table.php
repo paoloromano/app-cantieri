@@ -20,8 +20,11 @@ return new class extends Migration
             $table->integer('status')->default(0)->comment('EMPTY');
             $table->string('url_setting')->nullable();
             $table->string('qrcode')->nullable();
+            $table->unsignedInteger('views')->default(0);
             $table->string('redirect')->nullable();
             $table->unsignedBigInteger('user_id')->nullable()->default(0)->index('foreign_key_user_id');
+            $table->boolean('redirect_status')->default(false);
+            $table->string('current_lang')->default('en');
         });
     }
 

@@ -16,7 +16,7 @@ export default function ForgotPassword({status}) {
 
   return (
     <>
-      <Head title="Teikei"/>
+      <Head title="Me.Gio.Cri"/>
 
       <div className="mb-4 flex flex-col items-left">
         <div className="flex items-center space-x-4 mb-6">

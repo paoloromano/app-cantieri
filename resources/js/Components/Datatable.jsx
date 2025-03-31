@@ -69,10 +69,6 @@ export const Datatable = ({
             <RowsPerPage onRowsPerPage={onRowsPerPage}/>
             <Pagination className="hidden lg:block" isCompact showControls showShadow
                         page={page.current} total={page.last} onChange={page.set}/>
-            <div className="flex flex-col items-end text-xs">
-              <p className={"f"}>UX Design: MakeitWonder</p>
-              <p>Made with love by PSCompany</p>
-            </div>
           </div>
         )
       }

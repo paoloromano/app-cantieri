@@ -19,7 +19,7 @@ export default {
           DEFAULT: "#2355A1",
           dark: "#202F49",
           light: "#70c3efff",
-          bluett: "#26ACBE",
+          bluett: "#3f3f3f",
         },
       },
       fontFamily: {

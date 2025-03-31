@@ -32,14 +32,6 @@ class CardIndex extends JsonResource
             "status"            => $this->status,
             "user_id"           => $this->user_id,
             "name"              => $this->user->name,
-            "qrcode"            => Storage::url($this->qrcode),
-            "views"             => $this->views,
-            "profiles"           => ProfileResource::collection($this->profiles),
-            "leads"             => Lead::all(),
-            "lang"              => $this->current_lang,
-            "translations"      => Translation::where('language', $this->current_lang)
-                                                ->pluck('text', 'label_key')
-                                                ->toArray()
         ];
     }
 }

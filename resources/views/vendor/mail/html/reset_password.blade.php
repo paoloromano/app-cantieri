@@ -53,7 +53,7 @@
                                     <img src="https://app.nfcbusinesscard.it/build/assets/logo-teikei-norm-zz1defZw.png" class="logo" alt="NFC Business Card">
                                     <h1 class="ps-email-title">Reset Password</h1>
 
-                                    <p><strong>Hello!</strong> <br>This email is to notify you that we have received a password reset request for your <strong>Teikei</strong> account.</p>
+                                    <p><strong>Hello!</strong> <br>This email is to notify you that we have received a password reset request for your <strong>Me.Gio.Cri</strong> account.</p>
 
                                     <p></p><button class="ps-button button-blue"><a href="{{$url}}">Reset password</a></button></p>
 

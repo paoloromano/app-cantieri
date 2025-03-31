@@ -106,10 +106,9 @@ export default function UpdatePasswordForm() {
           color="primary"
           type="submit"
           disabled={processing}
-          className="flex justify-end pr-0"
-          endContent={<img src={IconSave} alt="Salva" className="size-8"/>}
+          className="flex justify-end pr-0 text-2xl"
         >
-
+            Salva
         </Button>
 
         <Transition

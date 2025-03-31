@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->boolean('active')->default(false);
+        Schema::create('translations', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('label_key');
+            $table->string('language');
+            $table->text('text');
+            $table->timestamps();
+
+            $table->unique(['label_key', 'language']);
         });
     }
 
@@ -21,8 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->dropColumn('active');
-        });
+        Schema::dropIfExists('translations');
     }
 };

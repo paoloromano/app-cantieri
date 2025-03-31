@@ -51,21 +51,10 @@ export default function UpdateProfileInformation() {
           color="primary"
           type="submit"
           disabled={processing}
-          className="flex justify-end pr-0"
-          endContent={<img src={IconSave} alt="Salva" className="size-8"/>}
+          className="flex justify-end pr-0 text-2xl"
         >
-
+            Salva
         </Button>
-
-        {/*<Transition*/}
-        {/*  show={recentlySuccessful}*/}
-        {/*  enter="transition ease-in-out"*/}
-        {/*  enterFrom="opacity-0"*/}
-        {/*  leave="transition ease-in-out"*/}
-        {/*  leaveTo="opacity-0"*/}
-        {/*>*/}
-        {/*  <p className="text-sm text-green-700">Salvato.</p>*/}
-        {/*</Transition>*/}
       </div>
     </form>
   );

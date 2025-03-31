@@ -21,7 +21,7 @@ export default function VerifyEmail() {
 
   return (
     <>
-      <Head title="Teikei"/>
+      <Head title="Me.Gio.Cri"/>
 
       <div className={"flex flex-col"}>
         <h1>Activate your account</h1>

@@ -30,19 +30,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsTo(Role::class);
     }
 
-    public function card()
-    {
-        return $this->hasOne(Card::class, 'user_id');
-    }
-
     public function hasRole(string $roleName): bool
     {
         return $this->role && $this->role->slug === $roleName;
-    }
-
-    public function company()
-    {
-        return $this->hasOne(Company::class, 'user_id');
     }
 
     /**

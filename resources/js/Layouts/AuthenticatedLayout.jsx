@@ -11,7 +11,7 @@ export default function AuthenticatedLayout({ children, title }) {
 
   return (
     <>
-      <Head title="Teikei" />
+      <Head title="Me.Gio.Cri" />
       <Menu isCompact={isCompact} />
       <main className={
         "transition-all ml-auto p-8"

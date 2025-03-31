@@ -22,11 +22,10 @@ export default function Login({status}) {
 
   return (
     <>
-      <Head title="Teikei"/>
+      <Head title="Me.Gio.Cri"/>
 
       <div className={"flex flex-col"}>
-        <p className={"text-2xl font-bold leading-10"}>Log into your account</p>
-        <p>Enter activation email and password to manage your TCard.</p>
+        <p className={"text-2xl font-bold leading-10"}>Entra nel tuo account</p>
       </div>
 
       {message && (
@@ -50,7 +49,6 @@ export default function Login({status}) {
             type="email"
             autoComplete="username"
             classNames={{inputWrapper: "bg-gray-200 group-data-[hover=true]:bg-gray-200 group-data-[focus=true]:bg-gray-200 "}}
-            //startContent={<IconMail/>}
             value={data.email}
             onChange={(e) => setData("email", e.target.value)}
             isInvalid={!!errors.email}
@@ -69,7 +67,6 @@ export default function Login({status}) {
             autoComplete="current-password"
             placeholder={""}
             classNames={{inputWrapper: "bg-gray-200 group-data-[hover=true]:bg-gray-200 group-data-[focus=true]:bg-gray-200  "}}
-            //startContent={<IconLock/>}
             endContent={
               <Button variant="light" size="sm" onPress={() => setPasswordVisible(!passwordVisible)} isIconOnly>
                 {passwordVisible ? <img className={"size-6"} src={IconPswHide}/> : <img className={"size-6"} src={IconPswShow}/>}
@@ -86,7 +83,7 @@ export default function Login({status}) {
           <div className="flex flex-col sm:flex-row gap-1 flex-grow">
             <Checkbox className={"checkbox-wrapper"} name="remember" value={data.remember}
                       onChange={(e) => setData("remember", e.target.checked)}>
-              Remember me
+              Ricordami
             </Checkbox>
           </div>
 
@@ -99,18 +96,13 @@ export default function Login({status}) {
 
         <Button className={"px-0 flex underline bg-white ps_button_link"}
                 onPress={() => router.visit(route("password.request"))}>
-          Forgot password?
+          Reset password?
         </Button>
 
 
       </form>
 
       <Spacer y={10}/>
-
-      {/*<div className={"flex flex-col"}>
-        <h2>Non hai un account?</h2>
-        <p><a className={"ps-link-a text-sm/[25px]"} href="/register">Registrati!</a></p>
-      </div>*/}
 
     </>
   );

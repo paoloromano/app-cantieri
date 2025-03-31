@@ -10,7 +10,7 @@ export default function Error({status}) {
 
   return (
     <>
-      <Head title="Teikei"/>
+      <Head title="Me.Gio.Cri"/>
 
       <div className={"flex flex-col"}>
         <h1>OPS! Qualcosa è andato storto..</h1>

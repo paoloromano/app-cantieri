@@ -29,29 +29,4 @@ class Card extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function profiles()
-    {
-        return $this->hasMany(Profile::class);
-    }
-
-    public function activeProfile()
-    {
-        return $this->hasOne(Profile::class)->where('active', true);
-    }
-
-    public function leads()
-    {
-        return $this->hasMany(Lead::class);
-    }
-
-    public function tags()
-    {
-        return $this->hasMany(Tag::class);
-    }
-
-    public function getTranslations()
-    {
-        return Translation::where('language', $this->lang)->get()->pluck('text', 'label_key');
-    }
-
 }

@@ -114,41 +114,6 @@ export default function Edit() {
     <>
       <div className="space-y-5 xl:w-3/4 lg:w-2/3 sm:w-full">
 
-        <div className="flex w-full">
-          {/* Colonna sinistra */}
-          <div className="flex flex-col items-center">
-            <img src={logo} alt="Profile" className="rounded-full w-24 h-24"/>
-            <div className="flex -mt-5">
-              <Button
-                onClick={() => fileInputRef.current.click()}
-                isIconOnly
-                className="bg-transparent"
-                startContent={<img src={IconEditImage} alt="Edit" className="rounded-full size-6 border-1"/>}
-              />
-              <Button
-                onClick={handleDeleteImage}
-                isIconOnly
-                className="bg-transparent"
-                startContent={<img src={IconDeleteImage} alt="Delete" className="rounded-full size-6 border-1"/>}
-              />
-              <input
-                type="file"
-                ref={fileInputRef}
-                style={{display: 'none'}}
-                accept="image/*"
-                onChange={handleFileChange}
-              />
-            </div>
-          </div>
-
-          {/* Colonna destra */}
-          <div className="flex items-center ml-8">
-            <span className="text-[25px] text-white">{user.name}</span>
-          </div>
-        </div>
-
-        <Spacer y="6"/>
-
         <UpdateProfileInformationForm/>
 
         <UpdatePasswordForm/>

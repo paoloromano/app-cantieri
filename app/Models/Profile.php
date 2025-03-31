@@ -25,24 +25,4 @@ class Profile extends Model
         return $this->belongsTo(Card::class);
     }
 
-    public function socialNetworks()
-    {
-        return $this->hasMany(ProfileSocialNetwork::class);
-    }
-
-    public function documents()
-    {
-        return $this->hasMany(ProfileDocument::class);
-    }
-
-    public function images()
-    {
-        return $this->hasMany(ProfileImage::class);
-    }
-
-    public function links()
-    {
-        return $this->hasMany(ProfileLink::class);
-    }
-
 }
