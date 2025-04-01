@@ -36,8 +36,6 @@ class  AuthenticatedSessionController extends Controller
 
         $user = Auth::user();
 
-        Log::info($user);
-
         if (is_null($user->email_verified_at)) {
             Auth::logout();
             return redirect()->route('verification.notice', ['userEmail' => $user->email])
@@ -48,22 +46,10 @@ class  AuthenticatedSessionController extends Controller
 
         $user = Auth::user();
         if ($user->hasRole('super-admin')) {
-            return redirect()->route('cards.index');
-        } elseif ($user->hasRole('card')) {
-
-            $card = $user->card;
-
-            if ($card) {
-                return Redirect::route('cards.edit', ['card' => $card->id]);
-            } else {
-                Auth::logout();
-                return Redirect::route('login')->with('error', 'No card found for this user.');
-            }
-        }else if ($user->hasRole('admin')) {
-            return redirect()->route('cards.index-company');
+            return redirect()->route('home');
         }
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return Redirect::route('login')->with('error', 'No card found for this user.');
     }
 
     /**

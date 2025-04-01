@@ -35,7 +35,7 @@ Route::get('/', function () {
 
     if (!$user) return redirect()->route('login');
 
-    return redirect()->route('cards.index');
+    return redirect()->route('home');
 });
 
 //Guest
@@ -72,6 +72,10 @@ Route::middleware('auth')->group(function () {
 
     //Verified
     Route::middleware(['verified'])->group(function () {
+
+        Route::get('/', function () {
+            return Inertia::render('Homepage');
+        })->name('home');
 
         Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 

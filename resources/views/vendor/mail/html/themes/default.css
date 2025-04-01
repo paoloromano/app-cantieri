@@ -32,7 +32,7 @@ a {
 }
 
 .link-footer {
-    color: #26ACBE;
+    color: #DEB887;
 }
 
 a img {
@@ -107,7 +107,7 @@ img {
 }
 
 .header a {
-    color: #26ACBE;
+    color: #DEB887;
     font-size: 19px;
     font-weight: bold;
     text-decoration: none;
@@ -178,7 +178,7 @@ img {
 }
 
 .footer a {
-    color: #26ACBE;
+    color: #DEB887;
     text-decoration: underline;
 }
 
@@ -234,11 +234,11 @@ img {
 
 .button-blue,
 .button-primary {
-    background-color: #26ACBE;
-    border-bottom: 8px solid #26ACBE;
-    border-left: 18px solid #26ACBE;
-    border-right: 18px solid #26ACBE;
-    border-top: 8px solid #26ACBE;
+    background-color: #DEB887 !important;
+    border-bottom: 8px solid #DEB887;
+    border-left: 18px solid #DEB887;
+    border-right: 18px solid #DEB887;
+    border-top: 8px solid #DEB887;
     border-radius: 10px;
 }
 

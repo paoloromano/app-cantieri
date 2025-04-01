@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { cn } from "@nextui-org/react";
+import {Button, cn} from "@nextui-org/react";
 import { usePage } from "@inertiajs/react";
 import SidebarProfile from "@/Components/SidebarProfile.jsx";
 
@@ -28,7 +28,7 @@ export const Menu = ({ isCompact }) => {
             "justify-center gap-0": isCompact,
           })}>
           <div className="flex items-center justify-center">
-              <h3 className={"text-4xl"}>Me.Gio.Cri.</h3>
+              <h3 className={"text-4xl"}><a href={"/"}>Me.Gio.Cri.</a></h3>
           </div>
         </div>
         <div
@@ -37,9 +37,9 @@ export const Menu = ({ isCompact }) => {
           })}>
           <div className="flex items-center justify-center">
             Ciao, {user.name}
-            <button onClick={handleOpenSidebarProfile} className="ml-4 btn">
-              Gestione Profilo
-            </button>
+              <Button className="ml-4 btn button-primary" onPress={handleOpenSidebarProfile}>
+                  Gestione Profilo
+              </Button>
           </div>
         </div>
       </aside>
