@@ -1,4 +1,4 @@
-import {Button, Input} from "@nextui-org/react";
+import {Button, Input} from "@heroui/react";
 import {router, usePage} from "@inertiajs/react";
 import {useQuery} from "@/Context/QueryContext.jsx";
 import {updateFiltersNumber} from "@/Utils/updateFiltersNumber.js";
@@ -11,32 +11,7 @@ export const CantieriTableHeader = ({selectedCantieri, setSelectedCantieri, show
 
   useEffect(() => updateFiltersNumber(query, setFiltersNumber), [query]);
 
-  const activateCards = (selectedCantieri) => {
-    console.log(selectedCantieri)
-    //Array.from(selectedCards)
-    /*router.post(route('cards.activate'), { cards: selectedCards }, {
-      onSuccess: () => {
-        console.log('Cards activated successfully');
-      },
-      onError: (errors) => {
-        // Gestisci gli errori qui
-        console.error('Error activating cards:', errors);
-      }
-    });*/
-  }
 
-  const deactivateCards = (selectedCantieri) => {
-    console.log(selectedCantieri)
-    /*router.post(route('cards.deactivate'), { cards: selectedCards }, {
-      onSuccess: () => {
-        console.log('Cards deactivated successfully');
-      },
-      onError: (errors) => {
-        // Gestisci gli errori qui
-        console.error('Error deactivating cards:', errors);
-      }
-    });*/
-  }
 
   return (
     <div className="flex flex-col gap-4 mb-3">
@@ -49,8 +24,11 @@ export const CantieriTableHeader = ({selectedCantieri, setSelectedCantieri, show
           <div className="flex gap-3 flex-wrap sm:flex-nowrap">
               <span className="font-light text-black opacity-30">Operazioni:</span>
               <a
-                  href="/cantieri/create"
-                  className={`p-0 ps-font-color`}
+                  onClick={(e) => {
+                      e.preventDefault();
+                      router.get('cantieri/create');
+                  }}
+                  className={`p-0 ps-font-color cursor-pointer`}
               >
                   Aggiungi
               </a>

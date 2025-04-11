@@ -1,4 +1,4 @@
-import {Button, Input} from "@nextui-org/react";
+import {Button, Input} from "@heroui/react";
 import {router, usePage} from "@inertiajs/react";
 import {useQuery} from "@/Context/QueryContext.jsx";
 import {updateFiltersNumber} from "@/Utils/updateFiltersNumber.js";

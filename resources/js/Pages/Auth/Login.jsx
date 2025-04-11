@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Head, router, useForm, usePage} from "@inertiajs/react";
-import {Button, Checkbox, Input, Spacer} from "@nextui-org/react";
+import {Button, Checkbox, Input, Spacer} from "@heroui/react";
 import IconPswHide from "../../../../public/icons/png/icon-visibility-off.png";
 import IconPswShow from "../../../../public/icons/png/icon-visibility-on.png";
 import LoginLayout from "@/Layouts/LoginLayout.jsx";

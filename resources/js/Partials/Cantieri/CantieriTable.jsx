@@ -2,7 +2,7 @@ import {useCallback} from "react";
 import {cantiereColumns} from "@/Constants/Cantieri/tableColumns.js";
 import {router, usePage} from "@inertiajs/react";
 import {Datatable} from "@/Components/Datatable.jsx";
-import {Button, Tooltip} from "@nextui-org/react";
+import {Button, Tooltip} from "@heroui/react";
 import {useQuery} from "@/Context/QueryContext.jsx";
 import { format } from 'date-fns';
 
@@ -45,7 +45,7 @@ export const CantieriTable = ({selectedCantieri, setSelectedCantieri, showDelete
                 endContent={<BiShow/>}
                 variant="light"
                 onPress={() => {
-                    window.open(`/card/${cantiere.id}`,);
+                    window.open(`/card/${cantiere.id}`);
                 }}
               />
             </Tooltip>

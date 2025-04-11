@@ -1,4 +1,4 @@
-import {Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Spacer} from "@nextui-org/react";
+import {Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Spacer} from "@heroui/react";
 import copyUrlCard from "../../../../public/icons/svg/icon-copy.svg";
 
 export const CardsQrCodeModal = ({ card, onClose, baseUrl }) => {

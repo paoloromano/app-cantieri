@@ -1,4 +1,4 @@
-import {Modal, ModalBody, ModalContent, Spacer} from "@nextui-org/react";
+import {Modal, ModalBody, ModalContent, Spacer} from "@heroui/react";
 
 export const CardsQrCodeModalFE = ({ card, onClose, baseUrl, themeColor, profileButtonColor }) => {
 

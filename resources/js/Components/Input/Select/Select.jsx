@@ -1,4 +1,4 @@
-import {Select as S, SelectItem as SI} from "@nextui-org/react";
+import {Select as S, SelectItem as SI} from "@heroui/react";
 
 export const Select = ({
                          name,

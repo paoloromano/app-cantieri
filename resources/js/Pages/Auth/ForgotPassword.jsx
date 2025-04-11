@@ -1,6 +1,6 @@
 import GuestLayout from "@/Layouts/GuestLayout.jsx";
 import {Head, Link, router, useForm} from "@inertiajs/react";
-import {Button, Input, Spacer} from "@nextui-org/react";
+import {Button, Input, Spacer} from "@heroui/react";
 import React from "react";
 import {IconMail} from "@tabler/icons-react";
 import iconBack from "../../../../public/icons/png/icon-back.png";

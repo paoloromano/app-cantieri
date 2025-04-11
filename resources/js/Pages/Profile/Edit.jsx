@@ -4,7 +4,7 @@ import UpdateProfileInformationForm from "@/Partials/Profile/UpdateProfileInform
 import { Head, usePage } from "@inertiajs/react";
 import placeholderProfilePhoto from "../../../../public/images/profile/icon-fallback-profile.png";
 import React, { useRef, useState } from "react";
-import { Button, Spacer } from "@nextui-org/react";
+import { Button, Spacer } from "@heroui/react";
 import IconEditImage from "../../../../public/icons/png/icon-modify.png";
 import IconDeleteImage from "../../../../public/icons/png/icon-delete.png";
 import axios from "axios";

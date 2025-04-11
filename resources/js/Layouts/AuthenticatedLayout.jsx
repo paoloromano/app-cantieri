@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import {Head, router, usePage} from "@inertiajs/react";
 import { toast } from "react-toastify";
 import { Menu } from "@/Components/Menu/Menu.jsx";
-import {Button, cn, Tooltip} from "@nextui-org/react";
+import {Button, cn, Tooltip} from "@heroui/react";
 import { useBreakpoint } from "@/Utils/useBreakpoint.js";
 import { IconLogout } from "@tabler/icons-react";
 

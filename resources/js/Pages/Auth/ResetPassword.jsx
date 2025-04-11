@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import GuestLayout from "@/Layouts/GuestLayout.jsx";
 import {Head, Link, useForm} from "@inertiajs/react";
-import {Button, Input, Spacer} from "@nextui-org/react";
+import {Button, Input, Spacer} from "@heroui/react";
 import {IconEye, IconEyeOff, IconLock, IconMail} from "@tabler/icons-react";
 import IconPswHide from "../../../../public/icons/png/icon-visibility-off.png";
 import IconPswShow from "../../../../public/icons/png/icon-visibility-on.png";

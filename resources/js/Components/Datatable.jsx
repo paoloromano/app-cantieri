@@ -8,7 +8,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow
-} from "@nextui-org/react";
+} from "@heroui/react";
 import {useCallback, useEffect, useState} from "react";
 import {useQuery} from "@/Context/QueryContext.jsx";
 import {RowsPerPage} from "@/Components/Input/index.js";

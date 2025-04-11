@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Button, Spacer, Tooltip} from "@nextui-org/react";
+import {Button, Spacer, Tooltip} from "@heroui/react";
 import Edit from "@/Pages/Profile/Edit.jsx";
 import {router} from "@inertiajs/react";
 

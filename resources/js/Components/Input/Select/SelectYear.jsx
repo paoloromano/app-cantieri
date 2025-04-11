@@ -1,4 +1,4 @@
-import {SelectItem} from "@nextui-org/react";
+import {SelectItem} from "@heroui/react";
 import {Select} from "@/Components/Input/Select/Select.jsx"; // Date from current year to 1900
 
 export const SelectYear = ({isolateYear, ...props}) => {

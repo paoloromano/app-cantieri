@@ -1,4 +1,4 @@
-import {DatePicker as DP} from '@nextui-org/react';
+import {DatePicker as DP} from '@heroui/react';
 import {parseDate} from "@internationalized/date";
 
 export const DatePicker = ({value, onChange, ...props}) => {

@@ -1,4 +1,4 @@
-import {Input} from "@nextui-org/react";
+import {Input} from "@heroui/react";
 import {usePage} from "@inertiajs/react";
 import {RowsPerPage} from "@/Components/Input/RowsPerPage.jsx";
 import {IconSearch} from "@tabler/icons-react";

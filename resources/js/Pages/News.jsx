@@ -1,7 +1,7 @@
 import { Head } from "@inertiajs/react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
 import { useState } from "react";
-import { Card } from "@nextui-org/react";
+import { Card } from "@heroui/react";
 
 export default function News() {
   const [showFilter, setShowFilter] = useState(false);

@@ -1,6 +1,6 @@
 import {router, useForm, usePage} from "@inertiajs/react";
 import {Transition} from "@headlessui/react";
-import {Button, Input, Spacer} from "@nextui-org/react";
+import {Button, Input, Spacer} from "@heroui/react";
 import IconSave from "../../../../public/icons/png/icon-save.png";
 import React from "react";
 

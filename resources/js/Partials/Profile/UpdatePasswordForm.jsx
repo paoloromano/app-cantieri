@@ -1,7 +1,7 @@
 import React, {useRef, useState} from "react";
 import {useForm} from "@inertiajs/react";
 import {Transition} from "@headlessui/react";
-import {Button, Input} from "@nextui-org/react";
+import {Button, Input} from "@heroui/react";
 import {IconEye, IconEyeOff} from "@tabler/icons-react";
 import IconSave from "/public/icons/png/icon-save.png";
 import IconPswShow from "/public/icons/png/icon-visibility-on.png"

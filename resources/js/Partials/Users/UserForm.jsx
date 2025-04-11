@@ -1,4 +1,4 @@
-import {Button, Checkbox, Input, Radio, RadioGroup, Select, SelectItem, Textarea} from "@nextui-org/react";
+import {Button, Checkbox, Input, Radio, RadioGroup, Select, SelectItem, Textarea} from "@heroui/react";
 import {usePage} from "@inertiajs/react";
 import {useInertiaForm} from "use-inertia-form";
 import {SelectYear} from "@/Components/Input/Select/SelectYear.jsx";

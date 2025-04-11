@@ -97,9 +97,28 @@ class CantiereController extends Controller
         return Redirect::back()->with('success', 'Cantiere updated.');
     }
 
-    public function destroy(Cantiere $cantiere): RedirectResponse
+    public function destroy(Request $request): RedirectResponse
     {
-        $cantiere->delete();
+
+        $cantieriIds = $request->input('cantieri_ids', []);
+
+        $all = false;
+
+        if ($cantieriIds[0] == 'a' && $cantieriIds[1] == 'l' && $cantieriIds[2] == 'l'){
+            $cantieriIds = Cantiere::query()->get();
+            $all = true;
+        }
+
+        foreach ($cantieriIds as $id) {
+
+            $cantiere = Cantiere::find($id);
+
+            if ($all){
+                $cantiere = Cantiere::find($id->id);
+            }
+
+            $cantiere->delete();
+        }
 
         return Redirect::back()->with('success', 'Cantiere/i deleted.');
     }

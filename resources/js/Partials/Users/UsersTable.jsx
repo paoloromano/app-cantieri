@@ -2,7 +2,7 @@ import {useCallback, useState} from "react";
 import {userColumns} from "@/Constants/Users/tableColumns.js";
 import {router, usePage} from "@inertiajs/react";
 import {Datatable} from "@/Components/Datatable.jsx";
-import {Button, Tooltip} from "@nextui-org/react";
+import {Button, Tooltip} from "@heroui/react";
 
 
 export const UsersTable = ({onSort, setPage, sortDescriptor, topContent, loadingState, selectedUsers, setSelectedUsers}) => {

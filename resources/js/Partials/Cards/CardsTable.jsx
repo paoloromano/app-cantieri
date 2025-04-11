@@ -2,7 +2,7 @@ import {useCallback} from "react";
 import {cardColumns} from "@/Constants/Cards/tableColumns.js";
 import {router, usePage} from "@inertiajs/react";
 import {Datatable} from "@/Components/Datatable.jsx";
-import {Button, Tooltip} from "@nextui-org/react";
+import {Button, Tooltip} from "@heroui/react";
 import {useQuery} from "@/Context/QueryContext.jsx";
 import { format } from 'date-fns';
 import deleteIcon from '/public/icons/png/icon-delete.png';

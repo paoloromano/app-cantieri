@@ -1,4 +1,4 @@
-import { Button, Input, Spacer } from "@nextui-org/react";
+import { Button, Input, Spacer } from "@heroui/react";
 import { useInertiaForm } from "use-inertia-form";
 import React, { useEffect, useRef, useState } from "react";
 import { defaultCreateForm } from "@/Constants/Cards/initialFormValues.js";

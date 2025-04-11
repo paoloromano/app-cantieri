@@ -1,4 +1,4 @@
-import {Spacer} from "@nextui-org/react";
+import {Spacer} from "@heroui/react";
 import {__} from "matice";
 
 const DataRender = ({name, data, entity}) => {

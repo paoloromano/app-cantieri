@@ -1,4 +1,4 @@
-import {Button} from "@nextui-org/react";
+import {Button} from "@heroui/react";
 import {router} from "@inertiajs/react";
 
 export default function Error({status}) {

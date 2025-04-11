@@ -1,5 +1,5 @@
 import MS from "react-select";
-import {semanticColors} from "@nextui-org/theme";
+import {semanticColors} from "@heroui/theme";
 
 export const AutocompleteSelect = ({
                                      label,

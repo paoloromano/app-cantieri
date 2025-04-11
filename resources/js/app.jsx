@@ -4,7 +4,7 @@ import "../css/app.css";
 import {createRoot} from "react-dom/client";
 import {createInertiaApp, router} from "@inertiajs/react";
 
-import {NextUIProvider} from "@nextui-org/react";
+import {HeroUIProvider} from "@heroui/react";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import {resolvePageComponent} from "laravel-vite-plugin/inertia-helpers";
@@ -21,7 +21,7 @@ createInertiaApp({
     };
 
     root.render(
-      <NextUIProvider navigate={navigate} locale="it-IT">
+      <HeroUIProvider navigate={navigate} locale="it-IT">
         <App {...props} />
         <ToastContainer
           position="top-center"
@@ -36,7 +36,7 @@ createInertiaApp({
           theme="light"
           transition:Bounce
         />
-      </NextUIProvider>,
+      </HeroUIProvider>,
     );
   },
   progress: {

@@ -3,9 +3,6 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
 import {CantiereEditForm} from "@/Partials/Cantieri/CantiereEditForm.jsx";
 
 export default function Edit({cantiere}) {
-
-    console.log(cantiere)
-
   return (
       <>
         <h1>

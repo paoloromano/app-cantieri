@@ -1,6 +1,6 @@
 import ApplicationLogo from "@/Components/ApplicationLogo.jsx";
 import Logo from "../../../public/images/logo-teikei-norm.png";
-import {Button} from "@nextui-org/react";
+import {Button} from "@heroui/react";
 import showIcon from "../../../public/icons/png/icon-look.png";
 import React from "react";
 

@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import {Button, cn} from "@nextui-org/react";
+import {Button, cn} from "@heroui/react";
 import { usePage } from "@inertiajs/react";
 import SidebarProfile from "@/Components/SidebarProfile.jsx";
 
