@@ -1,14 +1,14 @@
 import {Head, Link} from "@inertiajs/react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
-import {CardCreateForm} from "@/Partials/Cards/CardCreateForm.jsx";
+import {CantiereEditForm} from "@/Partials/Cantieri/CantiereEditForm.jsx";
 
 export default function Create() {
   return (
     <>
       <h1>
-
+        Crea un nuovo cantiere
       </h1>
-      <CardCreateForm/>
+      <CantiereEditForm/>
     </>
   );
 }

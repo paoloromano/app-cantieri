@@ -1,31 +1,22 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
 import {useCallback, useState} from "react";
-import {CardsTable} from "@/Partials/Cards/CardsTable.jsx";
-import {CardsTableHeader} from "@/Partials/Cards/CardsTableHeader.jsx";
-import {CardsDeleteModal} from "@/Partials/Cards/CardsDeleteModal.jsx";
 import {QueryProvider} from "@/Context/QueryContext.jsx";
-import {CardsQrCodeModal} from "@/Partials/Cards/CardsQrCodeModal.jsx";
+import {CantieriTable} from "@/Partials/Cantieri/CantieriTable.jsx";
+import {CantieriTableHeader} from "@/Partials/Cantieri/CantieriTableHeader.jsx";
+import {CantiereDeleteModal} from "@/Partials/Cantieri/CantiereDeleteModal.jsx";
 
-export default function Index({cards, baseUrl, session_rows_per_page}) {
+export default function Index({cantieri, baseUrl, session_rows_per_page}) {
 
-  const [selectedCards, setSelectedCards] = useState(new Set([]));
+  const [selectedCantieri, setSelectedCantieri] = useState(new Set([]));
 
   const [modals, setModals] = useState({
-    deleteModal: { isOpen: false, cards: [] },
-    qrCodeModal: { isOpen: false, card: null },
+    deleteModal: { isOpen: false, cantieri: [] },
   });
 
-  const openDeleteModal = useCallback((cards) => {
+  const openDeleteModal = useCallback((cantieri) => {
     setModals((prevModals) => ({
       ...prevModals,
-      deleteModal: { isOpen: true, cards },
-    }));
-  }, []);
-
-  const openQrCodeModal = useCallback((card) => {
-    setModals((prevModals) => ({
-      ...prevModals,
-      qrCodeModal: { isOpen: true, card },
+      deleteModal: { isOpen: true, cantieri },
     }));
   }, []);
 
@@ -36,40 +27,29 @@ export default function Index({cards, baseUrl, session_rows_per_page}) {
     }));
   }, []);
 
-  const showDeleteModal = (card) => {
-    const cardsToDelete = card ? [card] : Array.from(selectedCards).map(id => ({ id }));
-    openDeleteModal(cardsToDelete);
+  const showDeleteModal = (cantiere) => {
+    const cantieriToDelete = cantiere ? [cantiere] : Array.from(selectedCantieri).map(id => ({ id }));
+    openDeleteModal(cantieriToDelete);
   };
-
-  const showQrCodeModal = (card) => {
-    openQrCodeModal(card);
-  }
 
   return (
     <>
       <QueryProvider>
-        <h1 className="mb-0">Card Management Hub</h1>
-        <CardsTableHeader
-          selectedCards={selectedCards}
+        <h1 className="mb-0">Gestione Cantieri</h1>
+        <CantieriTableHeader
+          selectedCantieri={selectedCantieri}
           showDeleteModal={showDeleteModal}
         />
 
-        <CardsTable
-          selectedCards={selectedCards}
-          setSelectedCards={setSelectedCards}
+        <CantieriTable
+          selectedCantieri={selectedCantieri}
+          setSelectedCantieri={setSelectedCantieri}
           showDeleteModal={showDeleteModal}
-          showQrCodeModal={showQrCodeModal}
         />
 
-        <CardsDeleteModal
-          cards={modals.deleteModal.cards}
+        <CantiereDeleteModal
+          cantieri={modals.deleteModal.cantieri}
           onClose={() => closeModal('deleteModal')}
-        />
-
-        <CardsQrCodeModal
-          card={modals.qrCodeModal.card}
-          onClose={() => closeModal('qrCodeModal')}
-          baseUrl = {baseUrl}
         />
 
       </QueryProvider>
@@ -77,4 +57,4 @@ export default function Index({cards, baseUrl, session_rows_per_page}) {
   );
 }
 
-Index.layout = (page) => <AuthenticatedLayout children={page} title="Card"/>;
+Index.layout = (page) => <AuthenticatedLayout children={page} title="Cantieri"/>;

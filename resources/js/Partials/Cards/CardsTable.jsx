@@ -8,7 +8,6 @@ import { format } from 'date-fns';
 import deleteIcon from '/public/icons/png/icon-delete.png';
 import editIcon from '/public/icons/png/icon-modify.png';
 import showIcon from '/public/icons/png/icon-look.png';
-import qrIcon from '/public/icons/png/icon-qrcode.png';
 
 import statusOn from '/public/icons/png/icon-collapse-on.png';
 import statusOff from '/public/icons/png/icon-collapse-off.png';

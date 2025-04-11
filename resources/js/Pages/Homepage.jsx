@@ -9,7 +9,7 @@ export default function Homepage() {
 
     return (
         <>
-            <div className="gap-2 grid grid-cols-4 xs:grid-cols-1">
+            <div className="gap-2 grid lg:grid-cols-4 xs:grid-cols-1">
 
                 <Card className="max-w-[400px]">
                     <CardHeader className="flex gap-3">
@@ -24,7 +24,7 @@ export default function Homepage() {
                     </CardBody>
                     <Divider/>
                     <CardFooter>
-                        <Link showAnchorIcon href="/cantieri">
+                        <Link className={'ps_button_link'} showAnchorIcon href="/cantieri">
                             Gestisci i cantieri
                         </Link>
                     </CardFooter>
@@ -43,27 +43,8 @@ export default function Homepage() {
                     </CardBody>
                     <Divider/>
                     <CardFooter>
-                        <Link showAnchorIcon href="/dipendenti">
+                        <Link className={'ps_button_link'} showAnchorIcon href="/dipendenti">
                             Gestisci i dipendenti
-                        </Link>
-                    </CardFooter>
-                </Card>
-
-                <Card className="max-w-[400px]">
-                    <CardHeader className="flex gap-3">
-                        <MdRequestQuote />
-                        <div className="flex flex-col">
-                            <p className="text-md">Gestione Consuntivi</p>
-                        </div>
-                    </CardHeader>
-                    <Divider/>
-                    <CardBody>
-                        <p>Aggiungi, modifica o rimuovi i tuoi consuntivi.</p>
-                    </CardBody>
-                    <Divider/>
-                    <CardFooter>
-                        <Link showAnchorIcon href="/consuntivi">
-                            Gestisci i consuntivi
                         </Link>
                     </CardFooter>
                 </Card>
@@ -81,12 +62,30 @@ export default function Homepage() {
                     </CardBody>
                     <Divider/>
                     <CardFooter>
-                        <Link showAnchorIcon href="/preventivi">
+                        <Link className={'ps_button_link'} showAnchorIcon href="/preventivi">
                             Gestisci i preventivi
                         </Link>
                     </CardFooter>
                 </Card>
 
+                <Card className="max-w-[400px]">
+                    <CardHeader className="flex gap-3">
+                        <MdRequestQuote />
+                        <div className="flex flex-col">
+                            <p className="text-md">Gestione Consuntivi</p>
+                        </div>
+                    </CardHeader>
+                    <Divider/>
+                    <CardBody>
+                        <p>Aggiungi, modifica o rimuovi i tuoi consuntivi.</p>
+                    </CardBody>
+                    <Divider/>
+                    <CardFooter>
+                        <Link className={'ps_button_link'} showAnchorIcon href="/consuntivi">
+                            Gestisci i consuntivi
+                        </Link>
+                    </CardFooter>
+                </Card>
 
             </div>
         </>

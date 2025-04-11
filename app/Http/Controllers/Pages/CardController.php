@@ -3,32 +3,22 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CardStoreRequest;
-use App\Http\Requests\CardUpdateLangRequest;
-use App\Http\Requests\CardUpdateRequest;
-use App\Http\Requests\UserUpdateEmailPasswordRequest;
-use App\Http\Requests\UserUpdateRedirectRequest;
-use App\Http\Requests\UserUpdateUrlSettingRequest;
+use App\Http\Requests\Cantiere\CantiereStoreRequest;
+use App\Http\Requests\Cantiere\CantiereUpdateRequest;
+use App\Http\Resources\Card\CantiereResource;
 use App\Http\Resources\Card\CardIndex;
-use App\Http\Resources\Card\CardResource;
 use App\Http\Resources\User\UserResource;
 use App\Models\Card;
-use App\Models\Profile;
-use App\Models\Translation;
 use App\Models\User;
 use App\Services\CardService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Inertia\Response;
-use Thenextweb\PassGenerator;
 
 class CardController extends Controller
 {
@@ -111,7 +101,7 @@ class CardController extends Controller
         }
 
         return Inertia::render('Cards/Show', [
-            'card'        => new CardResource($card),
+            'card'        => new CantiereResource($card),
             'translation' => $translations,
             'baseUrl'     => url('/'),
             'user'        => $userData,
@@ -123,7 +113,7 @@ class CardController extends Controller
         return inertia('Cards/Create');
     }
 
-    public function store(CardStoreRequest $request): RedirectResponse
+    public function store(CantiereStoreRequest $request): RedirectResponse
     {
         if ($request->number_url > 0) {
 
@@ -192,7 +182,7 @@ class CardController extends Controller
 
         if ($current_user->id === 1 || $current_user->role_id == 2 || $current_user->id === $card->user_id) {
             return Inertia::render('Cards/Edit', [
-                'card'    => new CardResource($card),
+                'card'    => new CantiereResource($card),
                 'role_id' => $current_user->role_id,
             ]);
         }
@@ -201,7 +191,7 @@ class CardController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Card $card, CardUpdateRequest $request): RedirectResponse
+    public function update(Card $card, CantiereUpdateRequest $request): RedirectResponse
     {
 
         $user = User::where('id', $request->user_id)->first();

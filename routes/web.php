@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\CantiereController;
 use App\Http\Controllers\Pages\CardController;
 use App\Http\Controllers\Pages\ProfileController;
 use App\Http\Controllers\Pages\UserController;
@@ -77,12 +78,15 @@ Route::middleware('auth')->group(function () {
             return Inertia::render('Homepage');
         })->name('home');
 
+        //CRUD cantiere
+        Route::get('cantieri', [CantiereController::class, 'index'])->name('cantieri.index');
+        Route::get('cantieri/create', [CantiereController::class, 'create'])->name('cantieri.create');
+        Route::post('cantieri', [CantiereController::class, 'store'])->name('cantieri.store');
+        Route::get('cantieri/{id}/edit', [CantiereController::class, 'edit'])->name('cantieri.edit');
+        Route::put('cantieri/{id}', [CantiereController::class, 'update'])->name('cantieri.update');
+        Route::post('/cantieri/destroy', [CantiereController::class, 'destroy'])->name('cantieri.destroy');
+
         Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
-
-        //BE card
-        Route::get('cards/{card}/edit', [CardController::class, 'edit'])->name('cards.edit');
-        Route::put('cards/{card}', [CardController::class, 'update'])->name('cards.update');
-
 
         Route::get('users', [UserController::class, 'index'])->name('users.index');
         Route::post('users', [UserController::class, 'store'])->name('users.store');

@@ -84,7 +84,7 @@ export const Datatable = ({
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody items={data} loadingContent={<Spinner/>} loadingState={loadingState} emptyContent={`Nessuna ${entity} trovata.`}>
+      <TableBody items={data} loadingContent={<Spinner/>} loadingState={loadingState} emptyContent={`Nessun ${entity} trovato.`}>
         {(data) => (
           <TableRow
             className={highlightRow(data)}

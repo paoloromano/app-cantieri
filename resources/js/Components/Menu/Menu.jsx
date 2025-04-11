@@ -36,7 +36,6 @@ export const Menu = ({ isCompact }) => {
             "items-center": isCompact,
           })}>
           <div className="flex items-center justify-center">
-            Ciao, {user.name}
               <Button className="ml-4 btn button-primary" onPress={handleOpenSidebarProfile}>
                   Gestione Profilo
               </Button>
