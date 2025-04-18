@@ -20,7 +20,6 @@ return new class extends Migration {
             $table->id();
             $table->string('nome');
             $table->string('cognome');
-            $table->string('ruolo');
             $table->timestamps();
         });
     }

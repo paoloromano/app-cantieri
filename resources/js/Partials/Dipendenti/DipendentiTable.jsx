@@ -1,24 +1,23 @@
 import {useCallback} from "react";
-import {cantiereColumns} from "@/Constants/Cantieri/tableColumns.js";
 import {router, usePage} from "@inertiajs/react";
 import {Datatable} from "@/Components/Datatable.jsx";
 import {Button, Tooltip} from "@heroui/react";
 import {useQuery} from "@/Context/QueryContext.jsx";
-import { format } from 'date-fns';
+import {dipendenteColumns} from "@/Constants/Dipendenti/tableColumns.js";
 
 import { BiShow } from "react-icons/bi";
 import { BiEditAlt } from "react-icons/bi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
-export const CantieriTable = ({selectedCantieri, setSelectedCantieri, showDeleteModal}) => {
-  const {cantieri} = usePage().props;
+export const DipendentiTable = ({selectedDipendenti, setSelectedDipendenti, showDeleteModal}) => {
+  const {dipendenti} = usePage().props;
   const {query, onSort, setPage, loadingState} = useQuery();
 
   const page = {
-    current: cantieri['meta']['current_page'],
-    last: cantieri['meta']['last_page'],
+    current: dipendenti['meta']['current_page'],
+    last: dipendenti['meta']['last_page'],
     set: setPage,
-    total: cantieri['meta']['total']
+    total: dipendenti['meta']['total']
   };
 
   const sort = {
@@ -29,43 +28,39 @@ export const CantieriTable = ({selectedCantieri, setSelectedCantieri, showDelete
     set: onSort
   };
 
-  const renderCell = useCallback((cantiere, columnKey) => {
-    const cellValue = cantiere[columnKey];
+  const renderCell = useCallback((dipendente, columnKey) => {
+    const cellValue = dipendente[columnKey];
     switch (columnKey) {
-      case "data_inizio":
-        return <div className="flex">{format(new Date(cellValue), 'dd/MM/yyyy')}</div>;
-      case "data_fine":
-        return <div className="flex">{cellValue ? format(new Date(cellValue), 'dd/MM/yyyy') : 'In corso'}</div>;
       case "actions":
         return (
           <div className="flex">
-            <Tooltip content="Vedi cantiere">
+            <Tooltip content="Vedi dipendente">
               <Button
                 isIconOnly
                 endContent={<BiShow/>}
                 variant="light"
                 onPress={() => {
-                  router.visit(`/cantiere/${cantiere.id}`);
+                  router.visit(`/dipendente/${dipendente.id}`);
                 }}
               />
             </Tooltip>
 
-            <Tooltip content="Modifica cantiere">
+            <Tooltip content="Modifica dipendente">
               <Button
                 isIconOnly
                 endContent={<BiEditAlt/>}
                 variant="light"
                 onPress={() => {
-                  router.visit(`/cantieri/${cantiere.id}/edit`);
+                  router.visit(`/dipendenti/${dipendente.id}/edit`);
                 }}
               />
             </Tooltip>
-            <Tooltip color="danger" content="Elimina cantiere">
+            <Tooltip color="danger" content="Elimina dipendente">
               <Button
                   isIconOnly
                   endContent={<RiDeleteBin5Line/>}
                   variant="light"
-                  onPress={() => showDeleteModal(cantiere)}
+                  onPress={() => showDeleteModal(dipendente)}
               />
             </Tooltip>
           </div>
@@ -77,14 +72,14 @@ export const CantieriTable = ({selectedCantieri, setSelectedCantieri, showDelete
 
   return (
     <Datatable
-      data={cantieri.data}
-      dataColumns={cantiereColumns}
+      data={dipendenti.data}
+      dataColumns={dipendenteColumns}
       renderCell={renderCell}
-      selected={selectedCantieri}
-      setSelected={setSelectedCantieri}
+      selected={selectedDipendenti}
+      setSelected={setSelectedDipendenti}
       sort={sort}
       page={page}
-      entity="Cantiere"
+      entity="Dipendente"
       loadingState={loadingState}
     />
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Head, usePage} from '@inertiajs/react';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
-import {Spacer} from '@nextui-org/react';
+import {Spacer} from '@heroui/react';
 
 export default function VerifyEmail() {
   const { userEmail } = usePage().props;

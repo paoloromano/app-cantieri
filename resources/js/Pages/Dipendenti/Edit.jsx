@@ -1,18 +1,18 @@
 import {Head, Link} from "@inertiajs/react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
-import {CantiereEditForm} from "@/Partials/Cantieri/CantiereEditForm.jsx";
+import {DipendenteEditForm} from "@/Partials/Dipendenti/DipendenteEditForm.jsx";
 
-export default function Edit({cantiere}) {
+export default function Edit({dipendente}) {
 
-  console.log(cantiere);
+  console.log(dipendente);
 
   return (
       <>
         <h1>
-          Modifica cantiere
+          Modifica dipendente
         </h1>
-        <CantiereEditForm
-          cantiere={cantiere}
+        <DipendenteEditForm
+          dipendente={dipendente}
         />
       </>
   );

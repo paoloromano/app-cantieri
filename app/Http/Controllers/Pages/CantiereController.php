@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Pages;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Cantiere\CantiereStoreRequest;
 use App\Http\Requests\Cantiere\CantiereUpdateRequest;
 use App\Http\Resources\Cantiere\CantiereIndex;
@@ -51,36 +52,19 @@ class CantiereController extends Controller
     public function store(CantiereStoreRequest $request): RedirectResponse
     {
 
-        $data_inizio = $this->castDateFromDataPicker($request->data_inizio);
-        $data_fine = $this->castDateFromDataPicker($request->data_fine);
-
         Cantiere::create([
             'nome'          => $request->nome,
             'descrizione'   => $request->descrizione,
-            'data_inizio'   => $data_inizio,
-            'data_fine'     => $data_fine
+            'data_inizio'   => $request->data_inizio,
+            'data_fine'     => $request->data_fine
         ]);
 
         return redirect()->route('cantieri.index')->with('success', 'Cantiere created.');
     }
 
-    private function castDateFromDataPicker($date_array)
+    public function edit($id)
     {
-        if ($date_array != null) {
-
-            $yyyy = $date_array['year'];
-            $mm = sprintf("%02d", $date_array['month']);
-            $dd = $date_array['day'];
-
-            return $yyyy . '-' . $mm . '-' . $dd;
-
-        }else{
-            return null;
-        }
-    }
-
-    public function edit(Cantiere $cantiere)
-    {
+        $cantiere = Cantiere::findOrFail($id);
 
         return Inertia::render('Cantieri/Edit', [
             'cantiere'    => new CantiereResource($cantiere),
@@ -90,7 +74,7 @@ class CantiereController extends Controller
     public function update(Cantiere $cantiere, CantiereUpdateRequest $request): RedirectResponse
     {
 
-        $data = array_merge($request->validated(), $cantiere->toArray());
+        $data = $request->validated();
 
         $cantiere->update($data);
 

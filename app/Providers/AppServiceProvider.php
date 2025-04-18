@@ -29,7 +29,5 @@ class AppServiceProvider extends ServiceProvider
     {
         Number::useLocale('it');
         JsonResource::withoutWrapping();
-
-        Card::observe(CardObserver::class);
     }
 }

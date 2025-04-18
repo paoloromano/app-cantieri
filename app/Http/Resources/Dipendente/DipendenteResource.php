@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Cantiere;
+namespace App\Http\Resources\Dipendente;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Log;
 
-class CantiereResource extends JsonResource
+class DipendenteResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,9 +17,7 @@ class CantiereResource extends JsonResource
         return [
             "id"                => $this->id,
             "nome"              => $this->nome,
-            "descrizione"       => $this->descrizione,
-            "data_inizio"       => $this->data_inizio,
-            "data_fine"         => $this->data_fine,
+            "cognome"           => $this->cognome,
         ];
     }
 }

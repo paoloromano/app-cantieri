@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Dipendente;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CardDeleteRequest extends FormRequest
+class DipendenteUpdateRequest extends FormRequest
 {
 
     /**
@@ -15,7 +15,8 @@ class CardDeleteRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nome'      => ['required', 'string', 'max:255'],
+            'cognome'   => ['required', 'string', 'max:255'],
         ];
     }
 }

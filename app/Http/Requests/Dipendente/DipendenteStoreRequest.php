@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Dipendente;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class CardStoreRequest extends FormRequest
+class DipendenteStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

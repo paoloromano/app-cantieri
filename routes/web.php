@@ -7,12 +7,10 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\CantiereController;
-use App\Http\Controllers\Pages\CardController;
+use App\Http\Controllers\Pages\CantiereController;
+use App\Http\Controllers\Pages\DipendenteController;
 use App\Http\Controllers\Pages\ProfileController;
 use App\Http\Controllers\Pages\UserController;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -82,9 +80,17 @@ Route::middleware('auth')->group(function () {
         Route::get('cantieri', [CantiereController::class, 'index'])->name('cantieri.index');
         Route::get('cantieri/create', [CantiereController::class, 'create'])->name('cantieri.create');
         Route::post('cantieri', [CantiereController::class, 'store'])->name('cantieri.store');
-        Route::get('cantieri/{id}/edit', [CantiereController::class, 'edit'])->name('cantieri.edit');
-        Route::put('cantieri/{id}', [CantiereController::class, 'update'])->name('cantieri.update');
+        Route::get('cantieri/{cantiere}/edit', [CantiereController::class, 'edit'])->name('cantieri.edit');
+        Route::put('cantieri/{cantiere}', [CantiereController::class, 'update'])->name('cantieri.update');
         Route::post('/cantieri/destroy', [CantiereController::class, 'destroy'])->name('cantieri.destroy');
+
+        //CRUD dipendente
+        Route::get('dipendenti', [DipendenteController::class, 'index'])->name('dipendenti.index');
+        Route::get('dipendenti/create', [DipendenteController::class, 'create'])->name('dipendenti.create');
+        Route::post('dipendenti', [DipendenteController::class, 'store'])->name('dipendenti.store');
+        Route::get('dipendenti/{dipendente}/edit', [DipendenteController::class, 'edit'])->name('dipendenti.edit');
+        Route::put('dipendenti/{dipendente}', [DipendenteController::class, 'update'])->name('dipendenti.update');
+        Route::post('/dipendenti/destroy', [DipendenteController::class, 'destroy'])->name('dipendenti.destroy');
 
         Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
@@ -93,14 +99,6 @@ Route::middleware('auth')->group(function () {
         Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
         Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
         Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-
-        Route::get('cards', [CardController::class, 'index'])->name('cards.index');
-        Route::get('cards/create', [CardController::class, 'create'])->name('cards.create');
-        Route::post('cards', [CardController::class, 'store'])->name('cards.store');
-        Route::post('/cards/destroy', [CardController::class, 'destroy'])->name('cards.destroy');
-        Route::post('/upload-csv', [CardController::class, 'uploadCsv'])->name('cards.uploadCsv');
-        Route::post('cards/activate', [CardController::class, 'activateCard'])->name('cards.activate');
-        Route::post('cards/deactivate', [CardController::class, 'deactivateCard'])->name('cards.deactivate');
 
         // Authentication
         Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])->name('password.confirm');

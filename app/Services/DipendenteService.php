@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Models\Card;
+use App\Models\Dipendente;
 use App\Traits\HandlesPaginationSorting;
 use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -11,40 +11,37 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class CardService
+class DipendenteService
 {
     use HandlesPaginationSorting;
 
     /**
-     * Get a list of Cards from the database.
+     * Get a list of Dipendenti from the database.
      * @param Request $request
      * @return LengthAwarePaginator
      */
     public function index(Request $request): LengthAwarePaginator
     {
-        $query = $this->filter($request)->with('user');
+        $query = $this->filter($request);
         return $this->sortAndPaginate($request, $query);
 
     }
 
     /**
-     * Filter the Cards query.
+     * Filter the Dipendenti query.
      * @param Request $request
      * @return Builder
      */
     public function filter(Request $request): Builder
     {
 
-        $query = Card::query();
+        $query = Dipendente::query();
 
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function ($q) use ($search) {
-                $q->where('slug', 'like', '%' . $search . '%')
-                    ->orWhereHas('user', function ($q) use ($search) {
-                        $q->where('email', 'like', '%' . $search . '%')
-                            ->orWhere('name', 'like', '%' . $search . '%');
-                    });
+                $q->where('nome', 'like', '%' . $search . '%')
+                    ->orWhere('cognome', 'like', '%' . $search . '%');
             });
         }
 
@@ -52,16 +49,16 @@ class CardService
     }
 
     /**
-     * Store a Card in the database.
+     * Store a Dipendente in the database.
      * @param array $data
-     * @return Card
+     * @return Dipendente
      * @throws Exception
      */
-    public function store(array $data): Card
+    public function store(array $data): Dipendente
     {
         DB::beginTransaction();
         try {
-            $card = Card::create($data);
+            $card = Dipendente::create($data);
             DB::commit();
             return $card;
         } catch (Exception $e) {
@@ -72,20 +69,20 @@ class CardService
     }
 
     /**
-     * Update a User in the database.
-     * @param Card $card
+     * Update a Dipendente in the database.
+     * @param Dipendente $dipendente
      * @param array $data
-     * @return Card
+     * @return Dipendente
      * @throws Exception
      */
-    public function update(Card $card, array $data): Card
+    public function update(Dipendente $dipendente, array $data): Dipendente
     {
         DB::beginTransaction();
         try {
-            $card->update($data);
-            $card->save();
+            $dipendente->update($data);
+            $dipendente->save();
             DB::commit();
-            return $card;
+            return $dipendente;
         } catch (Exception $e) {
             DB::rollBack();
             Log::error($e->getMessage());
@@ -94,16 +91,16 @@ class CardService
     }
 
     /**
-     * Delete a Card from the database.
-     * @param Card $card
+     * Delete a Dipendente from the database.
+     * @param Dipendente $dipendente
      * @return void
      * @throws Exception
      */
-    public function destroy(Card $card): void
+    public function destroy(Dipendente $dipendente): void
     {
         DB::beginTransaction();
         try {
-            $card->delete();
+            $dipendente->delete();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();

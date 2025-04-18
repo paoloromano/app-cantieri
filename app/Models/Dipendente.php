@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Dipendente extends Model
 {
     use HasFactory;
+
+    protected $table = 'dipendenti';
+
+    protected $fillable = [
+        'nome',
+        'cognome',
+    ];
 }
