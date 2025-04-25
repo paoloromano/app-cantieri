@@ -15,4 +15,9 @@ class Dipendente extends Model
         'nome',
         'cognome',
     ];
+
+    public function oreLavorate()
+    {
+        return $this->hasMany(OreDipendente::class);
+    }
 }

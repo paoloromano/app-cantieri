@@ -45,7 +45,7 @@ export const CantieriTable = ({selectedCantieri, setSelectedCantieri, showDelete
                 endContent={<BiShow/>}
                 variant="light"
                 onPress={() => {
-                  router.visit(`/cantiere/${cantiere.id}`);
+                  router.visit(`/cantieri/${cantiere.id}`);
                 }}
               />
             </Tooltip>

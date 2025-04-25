@@ -18,4 +18,14 @@ class Cantiere extends Model
         'data_fine'
     ];
 
+    public function costi()
+    {
+        return $this->hasMany(CostoCantiere::class);
+    }
+
+    public function oreDipendenti()
+    {
+        return $this->hasMany(OreDipendente::class);
+    }
+
 }

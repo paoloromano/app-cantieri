@@ -83,6 +83,7 @@ Route::middleware('auth')->group(function () {
         Route::get('cantieri/{cantiere}/edit', [CantiereController::class, 'edit'])->name('cantieri.edit');
         Route::put('cantieri/{cantiere}', [CantiereController::class, 'update'])->name('cantieri.update');
         Route::post('/cantieri/destroy', [CantiereController::class, 'destroy'])->name('cantieri.destroy');
+        Route::get('cantieri/{cantiere}', [CantiereController::class, 'show'])->name('cantieri.show');
 
         //CRUD dipendente
         Route::get('dipendenti', [DipendenteController::class, 'index'])->name('dipendenti.index');
@@ -91,6 +92,7 @@ Route::middleware('auth')->group(function () {
         Route::get('dipendenti/{dipendente}/edit', [DipendenteController::class, 'edit'])->name('dipendenti.edit');
         Route::put('dipendenti/{dipendente}', [DipendenteController::class, 'update'])->name('dipendenti.update');
         Route::post('/dipendenti/destroy', [DipendenteController::class, 'destroy'])->name('dipendenti.destroy');
+        Route::get('dipendenti/{dipendente}', [DipendenteController::class, 'show'])->name('dipendenti.show');
 
         Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 

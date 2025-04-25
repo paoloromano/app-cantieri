@@ -63,6 +63,16 @@ class DipendenteController extends Controller
         return redirect()->route('dipendenti.index')->with('success', 'Dipendente created.');
     }
 
+    public function show($id)
+    {
+        $dipendente = Dipendente::with('oreLavorate.cantiere')
+            ->findOrFail($id);
+
+        return Inertia::render('Dipendenti/Show', [
+            'dipendente'    => new DipendenteResource($dipendente),
+        ]);
+    }
+
     public function edit($id)
     {
         $dipendente = Dipendente::findOrFail($id);

@@ -62,6 +62,19 @@ class CantiereController extends Controller
         return redirect()->route('cantieri.index')->with('success', 'Cantiere created.');
     }
 
+    public function show($id)
+    {
+        $cantiere = Cantiere::with([
+            'costi.allegatoCosto',
+            'oreDipendenti.dipendente'
+        ])
+            ->findOrFail($id);
+
+        return Inertia::render('Cantieri/Show', [
+            'cantiere' => new CantiereResource($cantiere),
+        ]);
+    }
+
     public function edit($id)
     {
         $cantiere = Cantiere::findOrFail($id);

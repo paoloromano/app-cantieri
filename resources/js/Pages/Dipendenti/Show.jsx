@@ -1,39 +1,26 @@
-import ShowCardLayout from "@/Layouts/ShowCardLayout.jsx";
-import HeroTemplate from "@/Components/HeroTemplate.jsx";
-import BalloonTemplate from "@/Components/BalloonTemplate.jsx";
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
+import {TbArrowBack} from "react-icons/tb";
+import {router} from "@inertiajs/react";
+import {Button} from "@heroui/react";
 
-export default function Show({ card, translations, baseUrl, user }) {
-
-  const activeProfile = card.profiles.find(profile => profile.active === 1);
-
-  const profileThemeColor = activeProfile?.profile_theme_color || 'light';
-  const profileThemeType = activeProfile?.profile_theme_type || 'balloon';
-
-  const profileButtonColor = activeProfile?.profile_button_color || "#26ACBE";
-  const profileLinkColor = activeProfile?.profile_link_color || "#26ACBE";
-
-  let TemplateComponent;
-  if (profileThemeType === 'hero') {
-    TemplateComponent = HeroTemplate;
-  } else if (profileThemeType === 'balloon') {
-    TemplateComponent = BalloonTemplate;
-  } else {
-    TemplateComponent = HeroTemplate;
-  }
+export default function Show({ dipendente }) {
 
   return (
 
-    <TemplateComponent
-      card={card}
-      translations={translations}
-      themeColor={profileThemeColor}
-      profile={activeProfile}
-      profileButtonColor={profileButtonColor}
-      profileLinkColor={profileLinkColor}
-      user={user}
-      baseUrl={baseUrl}
-    />
+      <>
+
+      <div className="flex flex-col sm:flex-row gap-3 mb-2">
+        <h1>{dipendente.nome} {dipendente.cognome}</h1>
+        <Button
+            endContent={<TbArrowBack />}
+            color="default"
+            onPress={() => {
+              router.visit(`/dipendenti`);
+            }}
+        > torna ai dipendeti </Button>
+      </div>
+      </>
   );
 }
 
-Show.layout = (page) => <ShowCardLayout children={page} title="Card"/>;
+Show.layout = (page) => <AuthenticatedLayout children={page} title="Dipendente"/>;

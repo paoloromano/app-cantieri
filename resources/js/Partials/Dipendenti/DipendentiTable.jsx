@@ -40,7 +40,7 @@ export const DipendentiTable = ({selectedDipendenti, setSelectedDipendenti, show
                 endContent={<BiShow/>}
                 variant="light"
                 onPress={() => {
-                  router.visit(`/dipendente/${dipendente.id}`);
+                  router.visit(`/dipendenti/${dipendente.id}`);
                 }}
               />
             </Tooltip>

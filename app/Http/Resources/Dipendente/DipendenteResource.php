@@ -18,6 +18,9 @@ class DipendenteResource extends JsonResource
             "id"                => $this->id,
             "nome"              => $this->nome,
             "cognome"           => $this->cognome,
+            'ore_lavorate' => OreDipendentePerDipendenteResource::collection(
+                $this->whenLoaded('oreLavorate')
+            ),
         ];
     }
 }

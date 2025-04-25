@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Resources\Cantiere;
+use App\Http\Resources\Dipendente\OreDipendenteResource;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\Log;
 
 class CantiereResource extends JsonResource
 {
@@ -20,6 +20,12 @@ class CantiereResource extends JsonResource
             "descrizione"       => $this->descrizione,
             "data_inizio"       => $this->data_inizio,
             "data_fine"         => $this->data_fine,
+            'costi'             => CostoCantiereResource::collection(
+                $this->whenLoaded('costi')
+            ),
+            'ore_lavorate' => OreDipendenteResource::collection(
+                $this->whenLoaded('oreDipendenti')
+            ),
         ];
     }
 }
